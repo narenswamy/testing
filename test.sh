@@ -1,2 +1,3 @@
 # testing
 ls -la
+pwd
