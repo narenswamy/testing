@@ -1,11 +1,12 @@
 jobs:
-- job: MultiRunJob
-  strategy:
-    matrix:
-      os:   [ 'windows', 'linux' ]
-      env:  [ 'dev', 'test', 'prod' ]
+- job: MyJob
   steps:
-  - template: RunMyJob.yml  # Include a job template file
+  - template: script-template1.yml  # Include the first script template
     parameters:
-      os: ${{ matrix.os }}
-      environment: ${{ matrix.env }}
+      scriptParam1: 'value1'
+      scriptParam2: 'value2'
+      
+  - template: script-template2.yml  # Include the second script template
+    parameters:
+      scriptParamA: 'valueA'
+      scriptParamB: 'valueB'
