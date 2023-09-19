@@ -1,3 +1,7 @@
+parameters:
+  scriptParam1: ''
+  scriptParam2: ''
+
 steps:
 - script: npm install
 - script: yarn install
