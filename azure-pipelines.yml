@@ -5,6 +5,9 @@ jobs:
     vmImage: 'ubuntu-latest'
   steps:
   - template: RunMyJob.yml  # Template reference
-- job: Windows
-  steps:
+    scriptParam1: 'value1'
+    scriptParam2: 'value2'
+    
   - template: RunMyJob.yml  # Template reference
+    scriptParamA: 'value1'
+    scriptParamB: 'value2'
