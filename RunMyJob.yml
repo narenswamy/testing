@@ -1,3 +1,7 @@
-parameters:
-  scriptParam1: 'value1'
-  scriptParam2: 'value2'
+jobs:
+  - job: BUild
+    steps:
+      - task: CmdLine@2
+        inputs:
+          script: 'echo ${{ parameters.scriptParamA }}'
+        displayName: 'show scriptParamA'
