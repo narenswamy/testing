@@ -12,8 +12,10 @@ stages:
       param1: 'value1'
       param2: 'value2'
       jobname: 'sachin'
-      
+
+    
   - template: RunMyJob.yml  # Second template
+    dependsOn: ${{ parameters.jobname }}
     parameters:
       paramA: 'value1'
       paramB: 'value2'
