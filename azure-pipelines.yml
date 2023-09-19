@@ -6,7 +6,5 @@ jobs:
   steps:
   - template: RunMyJob.yml  # Template reference
 - job: Windows
-  pool:
-    vmImage: 'windows-latest'
   steps:
   - template: RunMyJob.yml  # Template reference
