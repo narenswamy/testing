@@ -1,0 +1,12 @@
+jobs:
+  - job: BUILD_AND_DEPLOY
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'install Node.js'
+
+  - task: CmdLine@2
+        inputs:
+          script: 'echo ${{ parameters.scriptParamA }}'
+        displayName: 'show scriptParamA'
