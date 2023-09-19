@@ -4,9 +4,9 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   steps:
-  - template: RunMyjob.yml  # Template reference
+  - template: RunMyJob.yml  # Template reference
 - job: Windows
   pool:
     vmImage: 'windows-latest'
   steps:
-  - template: RunMyjob.yml  # Template reference
+  - template: RunMyJob.yml  # Template reference
