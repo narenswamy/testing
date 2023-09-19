@@ -2,7 +2,10 @@ parameters:
   scriptParam1: ''
   scriptParam2: ''
 
-steps:
-- script: npm install
-- script: yarn install
-- script: npm run compile
+jobs:
+  - job: BUILD_AND_DEPLOY
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'install Node.js'
