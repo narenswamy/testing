@@ -1,25 +1,21 @@
 trigger:
 - '*'
 
+jobs:
+- job: FirstJob
+  displayName: 'First Job'
+  steps:
+  - script: echo "This is the first job"
+    displayName: 'Run First Job'
 
-strategy:
-  matrix:
-    csi:
-      - template: RunMyJob.yml
-        parameters:
-          param1: 'value1'
-          param2: 'value2'
-          jobname: 'sachin'
-    msi:
-      - template: RunMyJob.yml
-        parameters:
-          paramA: 'value1'
-          paramB: 'value2'
-          jobname: 'ganguly' 
+- job: SecondJob
+  displayName: 'Second Job'
+  steps:
+  - script: echo "This is the second job"
+    displayName: 'Run Second Job'
 
-   
-
-pool:
-  name: 'Azure Pipelines'  # Specify the agent pool and VM image
-
-
+- job: ThirdJob
+  displayName: 'Third Job'
+  steps:
+  - script: echo "This is the third job"
+    displayName: 'Run Third Job'
