@@ -4,18 +4,17 @@ trigger:
 jobs:
 - job: FirstJob
   displayName: 'First Job'
-  steps:
-  - script: echo "This is the first job"
-    displayName: 'Run First Job'
+   - template: RunMyJob.yml
+     parameters:
+       param1: 'value1'
+       param2: 'value2'
+       jobname: 'sachin'
 
 - job: SecondJob
   displayName: 'Second Job'
-  steps:
-  - script: echo "This is the second job"
-    displayName: 'Run Second Job'
+   - template: RunMyJob.yml
+     parameters:
+       param1: 'value1'
+       param2: 'value2'
+       jobname: 'gan'
 
-- job: ThirdJob
-  displayName: 'Third Job'
-  steps:
-  - script: echo "This is the third job"
-    displayName: 'Run Third Job'
