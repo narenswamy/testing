@@ -9,5 +9,5 @@ jobs:
     vmImage: 'windows-latest'
   steps:
   - template: RunMyjob.yml
-  - template: RunMyJob.yml
+  - template: RunMyjob.yml
   
