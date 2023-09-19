@@ -1,20 +1,20 @@
 trigger:
 - '*'
 
-jobs:
-- job: FirstJob
-  displayName: 'First Job'
-   - template: RunMyJob.yml
-     parameters:
-       param1: 'value1'
-       param2: 'value2'
-       jobname: 'sachin'
+pool:
+  vmImage: 'ubuntu-latest'  # Specify the agent pool and VM image
 
-- job: SecondJob
-  displayName: 'Second Job'
-   - template: RunMyJob.yml
-     parameters:
-       param1: 'value1'
-       param2: 'value2'
-       jobname: 'gan'
+stages:
+- stage: MyStage
+  jobs:
+  - template: RunMyJob.yml
+    parameters:
+      param1: 'value1'
+      param2: 'value2'
+      jobname: 'sachin'
 
+  - template: RunMyJob.yml
+    parameters:
+      paramA: 'value1'
+      paramB: 'value2'
+      jobname: 'ganguly' 	  
