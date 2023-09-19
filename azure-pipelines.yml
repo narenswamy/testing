@@ -7,15 +7,20 @@ pool:
 stages:
 - stage: MyStage
   jobs:
-  - template: RunMyJob.yml  # First template
-    parameters:
-      param1: 'value1'
-      param2: 'value2'
-      jobname: 'sachin'
+  - job: 
+    steps:
+    - template: RunMyJob.yml  # First template
+       parameters:
+         param1: 'value1'
+         param2: 'value2'
+         jobname: 'sachin'
 
-    dependsOn: ${{ parameters.jobname }}
-  - template: RunMyJob.yml  # Second template
-    parameters:
-      paramA: 'value1'
-      paramB: 'value2'
-      jobname: 'ganguly'
+    
+  - job: 
+    dependsOn:
+    steps:
+    - template: RunMyJob.yml  # First template
+       parameters:
+         param1: 'value1'
+         param2: 'value2'
+         jobname: 'sachin'
