@@ -1,14 +1,11 @@
 parameters:
-- name: os
-  default: ''
-- name: environment
-  default: ''
-
+  scriptParam1: 'value1'
+  scriptParam2: 'value2'
+  
 jobs:
-- job: ${{ parameters.environment }}_${{ parameters.os }}_Job
-  pool:
-    vmImage: ${{ parameters.os }}
-  steps:
-  - script: |
-      echo "Running job on ${{ parameters.os }} environment: ${{ parameters.environment }}"
-    displayName: 'Run My Job'
+  - job: BUILD_AND_DEPLOY
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'install Node.js'
