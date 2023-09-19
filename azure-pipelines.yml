@@ -1,12 +1,12 @@
+
 jobs:
-- job: MyJob
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
   steps:
-  - template: RunMyJob.yml  # Include the first script template
-    parameters:
-      scriptParam1: 'value1'
-      scriptParam2: 'value2'
-      
-  - template: script-template2.yml  # Include the second script template
-    parameters:
-      scriptParamA: 'valueA'
-      scriptParamB: 'valueB'
+  - template: RunMyjob.yml  # Template reference
+- job: Windows
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - template: RunMyjob.yml  # Template reference
