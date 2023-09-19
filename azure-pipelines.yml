@@ -1,7 +1,7 @@
 jobs:
 - job: MyJob
   steps:
-  - template: script-template1.yml  # Include the first script template
+  - template: RunMyJob.yml  # Include the first script template
     parameters:
       scriptParam1: 'value1'
       scriptParam2: 'value2'
