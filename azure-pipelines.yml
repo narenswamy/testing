@@ -7,14 +7,12 @@ pool:
 stages:
 - stage: MyStage
   jobs:
-  -job: build
   - template: RunMyJob.yml
     parameters:
       param1: 'value1'
       param2: 'value2'
       jobname: 'sachin'
 
-  - job: test
   - template: RunMyJob.yml
     parameters:
       paramA: 'value1'
