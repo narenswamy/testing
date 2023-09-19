@@ -7,7 +7,7 @@ pool:
 stages:
 - stage: MyStage
   jobs:
-  - job: ${{ parameters.jobname }}
+  - job: test
     steps:
     - template: RunMyJob.yml  # First template
       parameters:
@@ -16,8 +16,8 @@ stages:
         jobname: 'sachin'
 
     
-  - job: ${{ parameters.jobname }} 
-    dependsOn:
+  - job: test2 
+    dependsOn: test
     steps:
     - template: RunMyJob.yml  # First template
       parameters:
