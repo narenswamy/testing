@@ -1,13 +1,25 @@
 trigger:
 - '*'
 
-pr: 
-- '*'
-
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  modules:
+    - module1
+    - module2
+    - module3
+    # Add more module names as needed
+
 jobs:
-- job: BuildJob
+- job: BuildMultipleModules
+  strategy:
+    matrix:
+      module: ${{ variables.modules }}
   steps:
-  - script: echo 'Hello, World!'
+  - script: |
+      echo "Building ${{ matrix.module }}"
+      cd ${{ matrix.module }}
+      npm install
+      npm run build
+    displayName: 'Build Node.js Module'
