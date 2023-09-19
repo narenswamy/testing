@@ -1,0 +1,14 @@
+parameters:
+- name: os
+  default: ''
+- name: environment
+  default: ''
+
+jobs:
+- job: ${{ parameters.environment }}_${{ parameters.os }}_Job
+  pool:
+    vmImage: ${{ parameters.os }}
+  steps:
+  - script: |
+      echo "Running job on ${{ parameters.os }} environment: ${{ parameters.environment }}"
+    displayName: 'Run My Job'
