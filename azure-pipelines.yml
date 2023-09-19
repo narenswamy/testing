@@ -1,19 +1,24 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
+parameters:
+  # Define the variable groups to use
+  - name: variableGroups
+    type: object
+    default:
+      - name: "Customer"
+        variableGroupName: "Customer variables"
+      - name: "Test"
+        variableGroupName: "Test variables"
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+  - stage: "test_stage"
+    jobs:
+      # Run the job for each variable group
+      - ${{ each variableGroup in parameters.variableGroups }}:
+          - job: "run_for_each_${{ variableGroup.name }}_variable_group_job"
+            displayName: "Using ${{ upper(variableGroup.name) }} variable group"
+            variables:
+              - group: ${{ variableGroup.variableGroupName }}
+            steps:
+              - script: echo $(MyVariable)
