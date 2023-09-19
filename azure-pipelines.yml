@@ -1,15 +1,17 @@
 
-#jobs:
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-latest'
-  steps:
-  - template: RunMyJob.yml  # Template reference
-    parameters:
-      scriptParam1: 'value1'
-      scriptParam2: 'value2'
+trigger:
+- '*'
+
+pool:
+  vmImage: 'ubuntu-latest'  # Specify the agent pool and VM image
+
+stages:
+- stage: MyStage
+  jobs:
+  - job: Job1
+    steps:
+    - script: echo "This is Job 1"
     
-  - template: RunMyJob.yml  # Template reference
-    parameters:
-      scriptParamA: 'value1'
-      scriptParamB: 'value2'
+  - job: Job2
+    steps:
+    - script: echo "This is Job 2"
