@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'ubuntu-latest'  # Specify the agent pool and VM image
+  name: 'Azure Pipelines'  # Specify the agent pool and VM image
 
 stages:
 - stage: MyStage
