@@ -1,7 +1,4 @@
 jobs:
-  - job: BUild
-    steps:
-      - task: CmdLine@2
-        inputs:
-          script: 'echo ${{ parameters.scriptParamA }}'
-        displayName: 'show scriptParamA'
+- job: BuildJob
+  steps:
+  - script: echo 'Hello, World!'
