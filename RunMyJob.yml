@@ -1,11 +1,9 @@
 parameters:
   scriptParam1: ''
   scriptParam2: ''
+  jobname: ''
 
 jobs:
-  - job: BUILD_AND_DEPLOY
+  - job: ${{ parameters.jobname }}
     steps:
-      - task: NodeTool@0
-        inputs:
-          versionSpec: '16.x'
-        displayName: 'install Node.js'
+      - script: echo "This is the ${{ parameters.jobname }} job"
