@@ -4,17 +4,17 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'  # Specify the agent pool and VM image
 
-stages:
-- stage: MyStage
-  jobs:
-  - template: RunMyJob.yml
+jobs:
+- job: MyJob
+  steps:
+  - template: RunMyJob.yml  # First template
     parameters:
       param1: 'value1'
       param2: 'value2'
       jobname: 'sachin'
-
-  - template: RunMyJob.yml
+      
+  - template: RunMyJob.yml  # Second template
     parameters:
       paramA: 'value1'
       paramB: 'value2'
-      jobname: 'ganguly' 
+      jobname: 'ganguly'
