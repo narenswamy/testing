@@ -8,10 +8,12 @@ pool:
 stages:
 - stage: MyStage
   jobs:
-  - job: Job1
-    steps:
-    - script: echo "This is Job 1"
+  - template: RunMyJob.yml
+    parameters:
+      param1: 'value1'
+      param2: 'value2'
     
-  - job: Job2
-    steps:
-    - script: echo "This is Job 2"
+  - template: RunMyJob.yml
+     parameters:
+      paramA: 'value1'
+      paramB: 'value2'
