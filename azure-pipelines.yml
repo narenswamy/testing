@@ -8,6 +8,6 @@ jobs:
   pool:
     vmImage: 'windows-latest'
   steps:
-  - template: RunMyjob.yml
-  - template: RunMyjob.yml
+  - template: RunMyJob.yml
+  - template: RunMyJob.yml
   
