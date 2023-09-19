@@ -1,20 +1,25 @@
 trigger:
 - '*'
 
+
+strategy:
+  matrix:
+    csi:
+      - template: RunMyJob.yml
+        parameters:
+          param1: 'value1'
+          param2: 'value2'
+          jobname: 'sachin'
+    msi:
+      - template: RunMyJob.yml
+        parameters:
+          paramA: 'value1'
+          paramB: 'value2'
+          jobname: 'ganguly' 
+
+   
+
 pool:
   name: 'Azure Pipelines'  # Specify the agent pool and VM image
 
-stages:
-- stage: MyStage
-  jobs:
-  - template: RunMyJob.yml
-    parameters:
-      param1: 'value1'
-      param2: 'value2'
-      jobname: 'sachin'
 
-  - template: RunMyJob.yml
-    parameters:
-      paramA: 'value1'
-      paramB: 'value2'
-      jobname: 'ganguly' 
