@@ -15,7 +15,7 @@ stages:
       jobname: 'sachin'
       india: 'canada'
   
-  - template: RunMyJob.yml
+  - template: test.yml
     parameters:
       paramA: 'value1'
       paramB: 'value2'
