@@ -9,15 +9,16 @@ stages:
 - stage: MyStage
   jobs:
   - template: RunMyJob.yml
+  - template: test.yml
     parameters:
       param1: 'value1'
       param2: 'value2'
       jobname: 'sachin'
       india: 'canada'
   
-  - template: test.yml
-    parameters:
-      paramA: 'value1'
-      paramB: 'value2'
-      jobname: 'ganguly' 
-      india: 'canada'
+ # - template: test.yml
+  #  parameters:
+   #   paramA: 'value1'
+   #   paramB: 'value2'
+    #  jobname: 'ganguly' 
+    #  india: 'canada'
