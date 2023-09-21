@@ -1,1 +1,8 @@
+parameters:
+  scriptParam1: ''
+  scriptParam2: ''
+  jobname: ''
 
+
+    steps:
+      - script: echo "This is the job"
