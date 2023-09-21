@@ -3,5 +3,5 @@ parameters:
   scriptParam2: ''
   jobname: ''
 
- steps:
-   - script: echo "This is the job"
+steps:
+- script: npm install
