@@ -4,7 +4,7 @@ parameters:
   jobname: ''
   india: ''
 
-
+steps:
 - task: CmdLine@2
   inputs:
     script: 'echo ${{ parameters.india }}'
