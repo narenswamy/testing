@@ -16,7 +16,7 @@ jobs:
 
       - template: test.yml
         parameters:
-          india: ''
+          india: '${{ parameters.india }}'
 
       
      
