@@ -14,7 +14,7 @@ stages:
       param2: 'value2'
       jobname: 'sachin'
 
-  - template: RunMyJob.yml
+  - template: test.yml
     parameters:
       paramA: 'value1'
       paramB: 'value2'
