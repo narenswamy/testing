@@ -4,4 +4,4 @@ parameters:
   jobname: ''
 
 steps:
-- script: npm install
+- script: 'echo ${{ parameters.india }}'
