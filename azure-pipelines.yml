@@ -15,6 +15,4 @@ stages:
       jobname: 'sachin'
       india: 'canada'
   
-  - template: test.yml 
-    parameters:
-      india: 'canada'
+ 
