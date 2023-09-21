@@ -3,7 +3,7 @@ parameters:
   scriptParam2: ''
   jobname: ''
   india:
-    type: string
+    type: object
     default: 'default-value'
 
 steps:
