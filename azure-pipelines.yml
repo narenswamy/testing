@@ -19,4 +19,4 @@ stages:
       paramA: 'value1'
       paramB: 'value2'
       jobname: 'ganguly' 
-  
+      india: 'canada'
