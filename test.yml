@@ -2,7 +2,9 @@ parameters:
   scriptParam1: ''
   scriptParam2: ''
   jobname: ''
-  india: ''
+  india:
+    type: string
+    default: 'default-value'
 
 steps:
 - task: CmdLine@2
