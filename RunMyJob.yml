@@ -14,7 +14,5 @@ jobs:
           versionSpec: '16.x'
         displayName: 'install Node.js'
 
-      - template: test.yml 
-        parameters:
-          india: 'canada'
+      
      
