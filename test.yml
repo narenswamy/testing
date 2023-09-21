@@ -5,4 +5,7 @@ parameters:
   india: ''
 
 steps:
-- script: 'echo ${{ parameters.india }}'
+- task: CmdLine@2
+  inputs:
+    script: 'echo ${{ parameters.india }}'
+  displayName: 'show india'
