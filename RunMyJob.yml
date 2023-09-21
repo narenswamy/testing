@@ -2,7 +2,8 @@ parameters:
   scriptParam1: ''
   scriptParam2: ''
   jobname: ''
-
+  india: ''
+  
 jobs:
   - job: ${{ parameters.jobname }}
     steps:
