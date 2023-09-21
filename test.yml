@@ -2,6 +2,7 @@ parameters:
   scriptParam1: ''
   scriptParam2: ''
   jobname: ''
+  india: ''
 
 steps:
 - script: 'echo ${{ parameters.india }}'
