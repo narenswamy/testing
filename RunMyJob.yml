@@ -30,11 +30,8 @@ jobs:
 
       - task: CmdLine@2
         inputs:
-          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/outt'
+          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/outt && 'echo $(Build.SourcesDirectory) && echo $(System.DefaultWorkingDirectory)'
 
-      - task: CmdLine@2
-        inputs:
-          script: 'echo $(Build.SourcesDirectory) && echo $(System.DefaultWorkingDirectory)'
 
           
 
