@@ -18,5 +18,10 @@ jobs:
         parameters:
           india: '${{ parameters.india }}'
 
+      - task: PublishBuildArtifacts@1
+         inputs:
+           pathToPublish: $(Build.ArtifactStagingDirectory)
+           artifactName: 'artifact'
+
       
      
