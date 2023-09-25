@@ -36,7 +36,7 @@ jobs:
 
       - task: CmdLine@2
         inputs:
-          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/outside '
+          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/out '
 
       
      
