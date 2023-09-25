@@ -34,7 +34,7 @@ jobs:
 
       - task: CmdLine@2
         inputs:
-          script: 'echo $(Build.SourcesDirectory) && ls -lrt $(Build.SourcesDirectory)'
+          script: 'echo $(Build.SourcesDirectory) && echo $(System.DefaultWorkingDirectory)'
 
           
 
