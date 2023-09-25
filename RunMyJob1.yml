@@ -8,25 +8,6 @@ jobs:
   - job: ${{ parameters.jobname }}
     steps:
       - script: echo "This is the ${{ parameters.jobname }} job"
-      
-      - task: NodeTool@0
-        inputs:
-          versionSpec: '16.x'
-        displayName: 'install Node.js'
-
-      - template: test.yml
-        parameters:
-          india: '${{ parameters.india }}'
-
-      - task: PublishBuildArtifacts@1
-        inputs:
-          pathToPublish: $(System.DefaultWorkingDirectory)/outt
-          artifactName: 'out'
-
-      - task: PublishBuildArtifacts@1
-        inputs:
-          pathToPublish: $(System.DefaultWorkingDirectory)/outt
-          artifactName: 'outt'
 
       - task: DownloadPipelineArtifact@2
         inputs:
@@ -36,7 +17,7 @@ jobs:
 
       - task: CmdLine@2
         inputs:
-          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/outside '
+          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/out'
 
       
      
