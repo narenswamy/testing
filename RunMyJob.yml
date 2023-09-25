@@ -20,7 +20,7 @@ jobs:
 
       - task: PublishBuildArtifacts@1
         inputs:
-          pathToPublish: $(Build.ArtifactStagingDirectory)
+          pathToPublish: $(Build.ArtifactStagingDirectory)/out
           artifactName: 'artifact'
 
       
