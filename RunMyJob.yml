@@ -21,7 +21,12 @@ jobs:
       - task: PublishBuildArtifacts@1
         inputs:
           pathToPublish: $(System.DefaultWorkingDirectory)/out
-          artifactName: 'artifact'
+          artifactName: 'out'
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathToPublish: $(System.DefaultWorkingDirectory)/outt
+          artifactName: 'out'
 
       
      
