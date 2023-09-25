@@ -28,12 +28,6 @@ jobs:
           pathToPublish: $(System.DefaultWorkingDirectory)/outt
           artifactName: 'outt'
 
-      - task: DownloadPipelineArtifact@2
-        inputs:
-          buildType: 'current'
-          artifactName: 'outt'
-          targetPath: '$(System.DefaultWorkingDirectory)/out'
-
       - task: CmdLine@2
         inputs:
           script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/out '
