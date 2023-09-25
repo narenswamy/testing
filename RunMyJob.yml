@@ -32,11 +32,11 @@ jobs:
         inputs:
           buildType: 'current'
           artifactName: 'out'
-          targetPath: '$(System.DefaultWorkingDirectory)/out'
+          targetPath: '$(System.DefaultWorkingDirectory)/outside'
 
       - task: CmdLine@2
         inputs:
-          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/out '
+          script: 'ls -lrt $(System.DefaultWorkingDirectory) && ls -lrt $(System.DefaultWorkingDirectory)/outside '
 
       
      
