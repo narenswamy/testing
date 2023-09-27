@@ -8,6 +8,8 @@ pool:
 stages:
 - stage: MyStage
   jobs:
+  - deployment: Approval
+    environment: 'DEV_ENV'
   - template: RunMyJob.yml
     parameters:
       param1: 'value1'
