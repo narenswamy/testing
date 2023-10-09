@@ -1,5 +1,5 @@
 parameters:
-  scriptParam1: ''
+  scriptParam1: 'test'
   scriptParam2: ''
   jobname: ''
   india: ''
@@ -7,7 +7,7 @@ parameters:
 jobs:
   - job: ${{ parameters.jobname }}
     steps:
-      - script: echo "This is the ${{ parameters.jobname }} job"
+      - script: echo "This is the ${{ parameters.jobname }} job ${{ parameters.scriptParam1 }}"
       
       - task: NodeTool@0
         inputs:
