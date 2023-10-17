@@ -32,7 +32,7 @@ jobs:
         displayName: 'Use NuGet 4.4.1'
         inputs:
          versionSpec: 6.4.0
-        checkLatest: true
+         checkLatest: true
         
 
       
