@@ -6,6 +6,9 @@ parameters:
   
 jobs:
   - job: ${{ parameters.jobname }}
+    variables:
+      bucket-name: ${{ parameters.param1 }}-${{ parameters.param2 }}-new
+      region: 'us-central1'
     steps:
       - script: echo "This is the ${{ parameters.jobname }} job ${{ parameters.scriptParam1 }}"
       
