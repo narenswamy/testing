@@ -10,7 +10,7 @@ jobs:
       bucket-name: ${{ parameters.param1 }}-${{ parameters.param2 }}-new
       region: 'us-central1'
     steps:
-      - script: echo "This is the ${{ parameters.jobname }} job ${{ parameters.scriptParam1 }}"
+      - script: echo "This is the $(bucket-name)"
       
       - task: NodeTool@0
         inputs:
