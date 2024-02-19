@@ -41,7 +41,7 @@ jobs:
         displayName: 'Run rsync'
         inputs:
           script: |
-            echo $(System.DefaultWorkingDirector) \
+            echo $(System.DefaultWorkingDirectory) \
             echo $(Build.ArtifactStagingDirectory)/build 
     
         
