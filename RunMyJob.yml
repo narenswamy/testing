@@ -42,6 +42,7 @@ jobs:
         inputs:
           script: |
             echo $(System.DefaultWorkingDirectory) \
+            ls $(System.DefaultWorkingDirectory) \
             echo $(Build.ArtifactStagingDirectory)/build 
     
         
