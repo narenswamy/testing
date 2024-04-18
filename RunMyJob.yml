@@ -44,6 +44,14 @@ jobs:
             echo $(System.DefaultWorkingDirectory) \
             ls $(System.DefaultWorkingDirectory) \
             echo $(Build.ArtifactStagingDirectory)/build 
+
+      - task: SFTPUpload@1
+        inputs:
+          serverEndpoint: 'dev_cd_dashboard_wpengine'
+          remoteFolderPath: '/dashboard'
+          sourceFolder: '$(System.DefaultWorkingDirectory)/build'
+          cleanTargetFolder: true 
+
     
         
 
